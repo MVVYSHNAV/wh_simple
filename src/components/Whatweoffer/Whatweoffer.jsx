@@ -67,7 +67,7 @@ const WhatWeOffer = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          
         >
           {cards.map((card) => (
             <motion.div

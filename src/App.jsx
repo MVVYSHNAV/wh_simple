@@ -6,6 +6,7 @@ import Whatweoffer from './components/Whatweoffer/Whatweoffer'
 import Ourvalue from './components/ourvalue/Ourvalue'
 import Testimonials from './components/testimonial/Testimonial'
 import Contact from './components/contact/Contact'
+import Footer from './components/footer/Footer'
 const App = () => {
   return (
     <div className=' overflow-x-hidden text-white'> 
@@ -16,6 +17,7 @@ const App = () => {
     <Ourvalue/>
     <Testimonials/>
     <Contact/>
+    <Footer/>
     </div>
   )
 }
