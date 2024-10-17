@@ -58,7 +58,7 @@ const LetsConnect = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left"
         >
           Let's Connect
         </motion.h1>
