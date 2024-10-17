@@ -1,5 +1,5 @@
 import React from 'react';
-import Heroimg1 from '../../assets/Heroimg1.jpeg';
+import Heroimg1 from '../../assets/heroimg1.jpeg';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
