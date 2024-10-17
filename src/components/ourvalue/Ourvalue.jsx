@@ -66,8 +66,10 @@ const GalleryView = () => {
       {/* Header */}
       <div className="max-w-5xl mx-auto">
         <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
           className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left mt-10 sm:mt-20" 
         >
           Our Value Proposition
