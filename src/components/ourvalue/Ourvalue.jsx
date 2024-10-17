@@ -62,27 +62,30 @@ const GalleryView = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4">
       {/* Header */}
       <div className="max-w-5xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left"
+          className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left mt-10 sm:mt-20" 
         >
-          Our Gallery
+          Our Value Proposition
         </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-gray-600 text-lg mb-8"
-        >
-          Discover our collection of innovative solutions
-        </motion.p>
-
+        <div className="flex flex-col items-center">
+        <motion.div
+            className="mt-4 sm:mt-10 mb-12 text-center max-w-xl sm:max-w-3xl px-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <h1 className=" font-Montserrat font-extralight text-2xl sm:text-64 md:text-5xl text-black leading-tight">
+            We Deliver Results <br/> That Matter
+            </h1>
+          </motion.div>
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map(cat => (
             <button
               key={cat.id}
@@ -96,6 +99,7 @@ const GalleryView = () => {
               {cat.label}
             </button>
           ))}
+        </div>
         </div>
       </div>
 
