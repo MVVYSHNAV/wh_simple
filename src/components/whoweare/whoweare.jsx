@@ -61,6 +61,7 @@ const WhoWeAre = () => {
             </h2>
             <NavLink to='/About'>
             <motion.button
+              name="about button"
               className="bg-black hover:bg-slate-400 hover:text-black text-white font-bold px-6 py-2.5 rounded-full text-sm transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
