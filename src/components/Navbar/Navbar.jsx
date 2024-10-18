@@ -48,7 +48,7 @@ const Navbar = () => {
           <motion.div 
             initial={{ opacity: 0, y: -20 }} 
             animate={{ opacity: 1, y: 0 }} 
-            className="absolute top-14 left-0 w-full bg-black flex flex-col items-center space-y-4 py-4 md:hidden z-50"
+            className="absolute top-14 left-0 w-full bg-black flex flex-col items-center space-y-4 py-4 md:hidden"
           >
             <a href="#home" onClick={toggleMenu}>Home</a>
             <a href="#ourservices" onClick={toggleMenu}>What We Do</a>

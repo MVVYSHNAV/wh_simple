@@ -1,53 +1,76 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Sample  from '../../assets/sample.png'
 
 const GalleryView = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [category, setCategory] = useState('all');
+  
 
   const galleryItems = [
     {
       id: 1,
-      src: "/api/placeholder/800/600",
+      src:Sample,
       title: "Innovative Solutions",
       category: "solutions",
       span: "col-span-2 row-span-2"
     },
     {
       id: 2,
-      src: "/api/placeholder/400/600",
+      src: Sample,
       title: "Measurable Impact",
       category: "impact",
       span: "col-span-1 row-span-2"
     },
     {
       id: 3,
-      src: "/api/placeholder/400/300",
+      src: Sample,
       title: "Sustainable Growth",
       category: "growth",
       span: "col-span-1 row-span-1"
     },
     {
       id: 4,
-      src: "/api/placeholder/400/400",
+      src: Sample,
       title: "Strategic Planning",
       category: "solutions",
       span: "col-span-1 row-span-1"
     },
     {
       id: 5,
-      src: "/api/placeholder/800/400",
+      src: Sample,
       title: "Business Development",
       category: "growth",
       span: "col-span-2 row-span-1"
     },
     {
       id: 6,
-      src: "/api/placeholder/400/600",
-      title: "Market Analysis",
-      category: "impact",
-      span: "col-span-1 row-span-2"
-    }
+      src: Sample,
+      title: "Business elopment",
+      category: "growth",
+      span: "col-span-2 row-span-1"
+    },
+    {
+      id: 7,
+      src: Sample,
+      title: "Busis Development",
+      category: "growth",
+      span: "col-span-2 row-span-1"
+    },
+    {
+      id: 8,
+      src: Sample,
+      title: "Buess Depment",
+      category: "growth",
+      span: "col-span-2 row-span-1"
+    },
+    {
+      id: 9,
+      src: Sample,
+      title: "Business Development",
+      category: "growth",
+      span: "col-span-2 row-span-1"
+    },
   ];
 
   const categories = [
