@@ -6,9 +6,9 @@ import Whoweare from './components/whoweare/whoweare';
 import Whatweoffer from './components/Whatweoffer/Whatweoffer';
 import Ourvalue from './components/ourvalue/Ourvalue';
 import Testimonials from './components/testimonial/Testimonial';
-import Contact from './components/Contact/Contact';
+import Contact from './components/contact/Contact';
 import Form from './components/form/form';
-import Footer from './components/Footer/Footer';
+import Footer from './components/footer/Footer';
 import About from './components/about/About';
 
 const Main = () => {
