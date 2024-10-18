@@ -202,6 +202,7 @@ const Contact = () => {
             >
               <div className="w-full h-64 rounded-3xl overflow-hidden">
                 <iframe
+                  title="location address"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.2706459577444!2d77.64614467585696!3d12.954525715250847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15d612ec72ab%3A0xb9d426b4a5361982!2sWizardHorizon%20Business%20%26%20Finance%20solutions!5e0!3m2!1sen!2sin!4v1729113061862!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
