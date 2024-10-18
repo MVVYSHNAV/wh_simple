@@ -48,23 +48,24 @@ const WhoWeAre = () => {
           </motion.p>
 
           {/* Call to Action Section */}
-          <motion.div
-            className="flex justify-between items-center mt-8 px-4"
+            <motion.div
+            className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8 px-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: false, amount: 0.3 }}
           >
             <h2 className="text-black text-lg md:text-xl font-medium">
-              To know more about us
+               To know more about us
             </h2>
             <motion.button
-              className="bg-black hover:bg-slate-400 hover:text-black text-white font-bold px-2 py-3 w-32 sm:px-6 sm:py-2.5 mx-5 rounded-full text-xs sm:text-sm transition-colors duration-300"
+              className="bg-black hover:bg-slate-400 hover:text-black text-white font-bold px-6 py-2.5 rounded-full text-sm transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              viewport={{ once: false }}
             >
-              Click Here
-            </motion.button>
+               Click Here
+              </motion.button>
           </motion.div>
         </div>
       </div>

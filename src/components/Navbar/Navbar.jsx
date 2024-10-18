@@ -37,10 +37,10 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-12 font-Montserrat text-white">
-          <motion.a variants={slideUp(0.2)} initial="hidden" animate="visible" href="#home">Home</motion.a>
-          <motion.a variants={slideUp(0.3)} initial="hidden" animate="visible" href="#ourservices">What We Do</motion.a>
-          <motion.a variants={slideUp(0.4)} initial="hidden" animate="visible" href="#about">Who We Are</motion.a>
-          <motion.a variants={slideUp(0.5)} initial="hidden" animate="visible" href="#contact">Contact</motion.a>
+          <motion.a variants={slideUp(0.2)} initial="hidden" animate="visible" viewport={{ once: false, amount: 0.1 }} href="#home">Home</motion.a>
+          <motion.a variants={slideUp(0.3)} initial="hidden" animate="visible" viewport={{ once: false, amount: 0.1 }} href="#ourservices">What We Do</motion.a>
+          <motion.a variants={slideUp(0.4)} initial="hidden" animate="visible" viewport={{ once: false, amount: 0.1 }} href="#about">Who We Are</motion.a>
+          <motion.a variants={slideUp(0.5)} initial="hidden" animate="visible" viewport={{ once: false, amount: 0.1 }}  href="#contact">Contact</motion.a>
         </nav>
 
         {/* Mobile Menu */}
