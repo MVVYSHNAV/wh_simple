@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Sample  from '../../assets/sample.png'
+import solution1 from '../../assets/solution1.jpg'
+import solution2 from '../../assets/solution2.jpg'
+import growth1 from '../../assets/growth1.jpg'
+import growth2 from '../../assets/growth2.jpg'
+import website1 from '../../assets/website1.jpg'
+import website2 from '../../assets/website2.jpg'
 
 const GalleryView = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -10,73 +15,52 @@ const GalleryView = () => {
   const galleryItems = [
     {
       id: 1,
-      src:Sample,
+      src:solution1,
       title: "Innovative Solutions",
       category: "solutions",
       span: "col-span-2 row-span-2"
     },
     {
       id: 2,
-      src: Sample,
-      title: "Measurable Impact",
-      category: "impact",
+      src: website1,
+      title: "Travel Website",
+      category: "website",
       span: "col-span-1 row-span-2"
     },
     {
       id: 3,
-      src: Sample,
+      src: growth1,
       title: "Sustainable Growth",
       category: "growth",
       span: "col-span-1 row-span-1"
     },
     {
       id: 4,
-      src: Sample,
+      src: solution2,
       title: "Strategic Planning",
       category: "solutions",
       span: "col-span-1 row-span-1"
     },
     {
       id: 5,
-      src: Sample,
+      src: growth2,
       title: "Business Development",
       category: "growth",
       span: "col-span-2 row-span-1"
     },
     {
       id: 6,
-      src: Sample,
-      title: "Business elopment",
-      category: "growth",
-      span: "col-span-2 row-span-1"
-    },
-    {
-      id: 7,
-      src: Sample,
-      title: "Busis Development",
-      category: "growth",
-      span: "col-span-2 row-span-1"
-    },
-    {
-      id: 8,
-      src: Sample,
-      title: "Buess Depment",
-      category: "growth",
-      span: "col-span-2 row-span-1"
-    },
-    {
-      id: 9,
-      src: Sample,
-      title: "Business Development",
-      category: "growth",
-      span: "col-span-2 row-span-1"
+      src: website2,
+      title: "Business Blog",
+      category: "website",
+      span: "col-span-1 row-span-2"
     },
   ];
 
   const categories = [
     { id: 'all', label: 'All' },
     { id: 'solutions', label: 'Solutions' },
-    { id: 'impact', label: 'Impact' },
+    { id: 'website', label: 'Website' },
     { id: 'growth', label: 'Growth' }
   ];
 

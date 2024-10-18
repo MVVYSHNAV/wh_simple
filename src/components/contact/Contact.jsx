@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail, Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
 
 const LetsConnect = () => {
   const [formData, setFormData] = useState({
@@ -50,6 +51,13 @@ const LetsConnect = () => {
     }
   };
 
+  const socialLinks = [
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61564983183570", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/wizardhorizon", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/wizard-horizon-19a698325", label: "Linkedin" },
+    { icon: Twitter, href: "https://x.com/WizardHorizon", label: "Twitter" }
+  ];
+
   return (
     <div className="container mx-auto p-4 mt-20 sm:mt-14">
       <div className="max-w-5xl mx-auto">
@@ -98,7 +106,7 @@ const LetsConnect = () => {
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
                     required
                   />
                 </motion.div>
@@ -114,7 +122,7 @@ const LetsConnect = () => {
                     placeholder="Email Address"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
                     required
                   />
                 </motion.div>
@@ -130,7 +138,7 @@ const LetsConnect = () => {
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
                   />
                 </motion.div>
                 <motion.div
@@ -145,7 +153,7 @@ const LetsConnect = () => {
                     placeholder="Company Name"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
                   />
                 </motion.div>
                 <motion.div
@@ -160,7 +168,7 @@ const LetsConnect = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows="4"
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-bg-purple-600"
                     required
                   ></textarea>
                 </motion.div>
@@ -168,7 +176,7 @@ const LetsConnect = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-300"
+                  className="w-full py-3 px-6 bg-purple-600 hover:bg-purple-800 text-white font-semibold rounded-lg transition-colors duration-300"
                 >
                   Send Message
                 </motion.button>
@@ -201,21 +209,53 @@ const LetsConnect = () => {
                 viewport={{ once: true }}
                 className="bg-black rounded-3xl p-8 text-white"
               >
-                <h3 className="text-xl font-bold mb-4">Contact Information</h3>
-                <div className="space-y-4">
-                  <p className="flex items-center">
-                    <span className="mr-3">📍</span>
-                    Indiranagar, Bangalore, Karnataka, India
-                  </p>
-                  <p className="flex items-center">
-                    <span className="mr-3">📞</span>
-                    +91 62386 63883
-                  </p>
-                  <p className="flex items-center">
-                    <span className="mr-3">✉️</span>
-                    info@wizardhorizon.com
-                  </p>
-                  <h3 className="text-lg font-bold mb-4">Social Media to Follow </h3>
+                <h3 className="text-xl font-bold mb-6">Contact Information</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 group cursor-pointer">
+                    <div className="p-3 bg-gray-800 rounded-full group-hover:bg-purple-600 transition-colors duration-300">
+                      <MapPin size={24} className="text-blue-400 group-hover:text-white" />
+                    </div>
+                    <p className="group-hover:text-blue-400 transition-colors duration-300">
+                      Indiranagar, Bangalore, Karnataka, India
+                    </p>
+                  </div>
+                  <div className="flex items-center space-x-4 group cursor-pointer">
+                    <div className="p-3 bg-gray-800 rounded-full group-hover:bg-purple-600 transition-colors duration-300">
+                      <Phone size={24} className="text-blue-400 group-hover:text-white" />
+                    </div>
+                    <p className="group-hover:text-blue-400 transition-colors duration-300">
+                      +91 62386 63883
+                    </p>
+                  </div>
+                  <div className="flex items-center space-x-4 group cursor-pointer">
+                    <div className="p-3 bg-gray-800 rounded-full group-hover:bg-purple-600 transition-colors duration-300">
+                      <Mail size={24} className="text-blue-400 group-hover:text-white" />
+                    </div>
+                    <p className="group-hover:text-blue-400 transition-colors duration-300">
+                      info@wizardhorizon.com
+                    </p>
+                  </div>
+                  
+                  <div className="pt-6">
+                    <h3 className="text-lg font-bold mb-4">Social Media</h3>
+                    <div className="flex items-center space-x-4">
+                      {socialLinks.map((social, index) => (
+                        <motion.a
+                          key={index}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          href={social.href}
+                          aria-label={social.label}
+                          className="p-3 bg-gray-800 rounded-full hover:bg-purple-900 transition-colors duration-300 flex items-center justify-center cursor-pointer"
+                        >
+                          <social.icon 
+                            size={24} 
+                            className="text-blue-400 group-hover:text-white" 
+                          />
+                        </motion.a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
