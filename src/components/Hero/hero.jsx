@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import  heroimg from '../../assets/heroimg1.jpeg'
+import heroimg from '../../assets/heroimg1.jpeg';
+import { NavLink } from 'react-router-dom'; // Fixed import
+
 const Hero = () => {
   return (
     <div className="container mx-auto px-4">
@@ -13,28 +15,23 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <div className="rounded-3xl overflow-hidden shadow-lg">
-            {/* Image Container with Overlay */}
-            <div className="grid grid-cols-1">
-              {/* Image and Gradient */}
-              <div className="col-span-1 row-start-1 col-start-1">
-                <motion.img
-                  src={heroimg}
-                  alt="Team collaboration"
-                  className="w-full h-[600px] object-cover rounded-3xl"
-                  initial={{ scale: 1.2, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                />
-              </div>
-              
-              {/* Gradient Overlay */}
-              <div className="col-span-1 row-start-1 col-start-1 bg-gradient-to-r from-black/50 to-transparent h-full w-full" />
+          <div className="relative rounded-3xl overflow-hidden shadow-lg">
+            {/* Image with Gradient Overlay */}
+            <div className="relative">
+              <motion.img
+                src={heroimg}
+                alt="Team collaboration"
+                className="w-full h-[600px] object-cover rounded-3xl"
+                initial={{ scale: 1.2, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent rounded-3xl" />
               
               {/* Text Overlay */}
               <motion.div
-                className="col-span-1 row-start-1 col-start-1 p-8 md:p-12 flex items-end h-full"
+                className="absolute bottom-0 left-0 p-8 md:p-12"
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -60,14 +57,15 @@ const Hero = () => {
             <h2 className="text-black text-lg md:text-xl font-medium">
               Let's Build the Future Together
             </h2>
-            <motion.button
-              className="bg-black hover:bg-slate-400 hover:text-black text-white font-bold px-6 py-2.5 rounded-full text-sm transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              viewport={{ once: false }}
-            >
-              Get Started
-            </motion.button>
+            <NavLink to="/form">
+              <motion.button
+                className="bg-black hover:bg-slate-400 hover:text-black text-white font-bold px-6 py-2.5 rounded-full text-sm transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get Started
+              </motion.button>
+            </NavLink>
           </motion.div>
         </motion.div>
 

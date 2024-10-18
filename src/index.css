@@ -4,3 +4,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities; 
+
+/* scroll bar design */
+::-webkit-scrollbar {
+    @apply w-2
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-200 dark:bg-gray-700;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 dark:bg-slate-400 rounded-full;
+  }

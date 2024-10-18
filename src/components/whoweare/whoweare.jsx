@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 const WhoWeAre = () => {
   return (
@@ -58,6 +59,7 @@ const WhoWeAre = () => {
             <h2 className="text-black text-lg md:text-xl font-medium">
                To know more about us
             </h2>
+            <NavLink to='/About'>
             <motion.button
               className="bg-black hover:bg-slate-400 hover:text-black text-white font-bold px-6 py-2.5 rounded-full text-sm transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
@@ -66,6 +68,7 @@ const WhoWeAre = () => {
             >
                Click Here
               </motion.button>
+              </NavLink>
           </motion.div>
         </div>
       </div>

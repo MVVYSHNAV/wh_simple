@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { MapPin, Phone, Instagram, Linkedin, Twitter, Facebook, Mail } from 'lucide-react';
 
-const LetsConnect = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
-    phone: '',
-    company: '',
     message: ''
   });
+  const [status, setStatus] = useState({
+    type: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -17,11 +19,39 @@ const LetsConnect = () => {
       ...prev,
       [name]: value
     }));
+    setStatus({ type: '', message: '' });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    
+    const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
+    const Form = new FormData();
+    Form.append('Email', formData.email);
+    Form.append('Description', formData.message);
+    Form.append('Date_Time', new Date().toLocaleString());
+
+    try {
+      await fetch(SCRIPT_URL, {
+        mode: 'no-cors',
+        method: 'POST',
+        body: Form,
+      });
+
+      setStatus({
+        type: 'success',
+        message: 'Message sent successfully! We will catch up with you within 24 hours.'
+      });
+      setFormData({ email: '', message: '' });
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: 'Failed to submit message.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const fadeInUp = {
@@ -59,16 +89,16 @@ const LetsConnect = () => {
   ];
 
   return (
-    <div className="container mx-auto p-4 mt-20 sm:mt-14">
+    <div id="Meetus" className="container mx-auto p-4 mt-20 sm:mt-14">
       <div className="max-w-5xl mx-auto">
         <motion.h1 
           variants={fadeInLeft}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left"
+          className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left mt-10 sm:mt-20"
         >
-          Let's Connect
+          MEET US
         </motion.h1>
 
         <div className="flex flex-col items-center">
@@ -79,7 +109,7 @@ const LetsConnect = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="mt-2 sm:mt-10 mb-12 text-center max-w-xl sm:max-w-3xl px-4"
           >
-            <h1 className="font-Montserrat font-extralight text-2xl sm:text-64 md:text-5xl text-black leading-tight">
+            <h1 className="font-Montserrat font-extralight text-2xl sm:text-64 md:text-5xl text-black dark:text-gray-400 leading-tight">
               Ready to Transform<br />
               Your Business?
             </h1>
@@ -91,95 +121,75 @@ const LetsConnect = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-black rounded-3xl p-8 text-white"
+              className="bg-black dark:bg-gray-900 rounded-3xl p-8 text-white"
             >
               <form onSubmit={handleSubmit} className="space-y-6">
-                <motion.div
-                  variants={fadeInUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                    required
-                  />
-                </motion.div>
-                <motion.div
-                  variants={fadeInUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
+                <motion.div variants={fadeInUp}>
                   <input
                     type="email"
                     name="email"
-                    placeholder="Email Address"
+                    placeholder="Email Address *"
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
                     required
                   />
                 </motion.div>
-                <motion.div
-                  variants={fadeInUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                  />
-                </motion.div>
-                <motion.div
-                  variants={fadeInUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  <input
-                    type="text"
-                    name="company"
-                    placeholder="Company Name"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                  />
-                </motion.div>
-                <motion.div
-                  variants={fadeInUp}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
+                <motion.div variants={fadeInUp}>
                   <textarea
                     name="message"
-                    placeholder="Your Message"
+                    placeholder="Your Message *"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows="4"
-                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-bg-purple-600"
+                    className="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600"
                     required
                   ></textarea>
                 </motion.div>
+
+                {status.message && (
+                  <div className={`p-3 rounded-lg ${
+                    status.type === 'success' ? 'bg-green-600' : 'bg-red-600'
+                  }`}>
+                    {status.message}
+                  </div>
+                )}
+
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="w-full py-3 px-6 bg-purple-600 hover:bg-purple-800 text-white font-semibold rounded-lg transition-colors duration-300"
+                  disabled={isSubmitting}
+                  className={`w-full py-3 px-6 bg-purple-600 hover:bg-purple-800 text-white font-semibold rounded-lg transition-colors duration-300 ${
+                    isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </motion.button>
+                <div className="pt-6">
+                    <h3 className="text-sm sm:text-lg font-Montserrat font-extralight mb-4">Stay Connected with WizardHorizon</h3>
+                    <div className="flex items-center space-x-4">
+                      {socialLinks.map((social, index) => (
+                        <motion.a
+                          key={index}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={social.label}
+                          className="p-3 bg-gray-800 rounded-full hover:bg-blue-600 transition-colors duration-300"
+                        >
+                          <social.icon 
+                            size={24} 
+                            className="text-blue-400 hover:text-white" 
+                          />
+                          
+                        </motion.a>
+                      ))}
+                    </div>
+                  </div>
+                  <p className=' mt-3 text-sm sm:text-lg font-Montserrat font-extraligth'>Follow us today and be a part of the WizardHorizon journey</p>
               </form>
             </motion.div>
 
@@ -187,7 +197,7 @@ const LetsConnect = () => {
               variants={fadeInRight}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.9 }}
+              viewport={{ once: false, amount: 0.3 }}
               className="space-y-6"
             >
               <div className="w-full h-64 rounded-3xl overflow-hidden">
@@ -207,7 +217,7 @@ const LetsConnect = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-black rounded-3xl p-8 text-white"
+                className="bg-black dark:bg-gray-900 rounded-3xl p-8 text-white"
               >
                 <h3 className="text-xl font-bold mb-6">Contact Information</h3>
                 <div className="space-y-6">
@@ -235,27 +245,6 @@ const LetsConnect = () => {
                       info@wizardhorizon.com
                     </p>
                   </div>
-                  
-                  <div className="pt-6">
-                    <h3 className="text-lg font-bold mb-4">Social Media</h3>
-                    <div className="flex items-center space-x-4">
-                      {socialLinks.map((social, index) => (
-                        <motion.a
-                          key={index}
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          href={social.href}
-                          aria-label={social.label}
-                          className="p-3 bg-gray-800 rounded-full hover:bg-purple-900 transition-colors duration-300 flex items-center justify-center cursor-pointer"
-                        >
-                          <social.icon 
-                            size={24} 
-                            className="text-blue-400 group-hover:text-white" 
-                          />
-                        </motion.a>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </motion.div>
             </motion.div>
@@ -266,4 +255,4 @@ const LetsConnect = () => {
   );
 };
 
-export default LetsConnect;
+export default Contact;
