@@ -186,7 +186,7 @@ const WhatWeOffer = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 mt-20 sm:mt-14">
+    <div id='whatwedo' className="container mx-auto p-4 mt-20 sm:mt-14">
       <div className="max-w-6xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, x: -50 }}

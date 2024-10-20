@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import { Outlet } from 'react-router-dom';
 
 const Getform = () => {
   const [formData, setFormData] = useState({
@@ -180,6 +181,7 @@ const Getform = () => {
         </div>
       </div>
       <Footer />
+      <Outlet/>
     </>
   );
 };

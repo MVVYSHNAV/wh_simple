@@ -1,41 +1,58 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
-import Whoweare from './components/Whoweare/Whoweare';
-import Whatweoffer from './components/Whatweoffer/Whatweoffer';
-import Ourvalue from './components/Ourvalue/Ourvalue';
-import Testimonials from './components/Testimonial/Testimonial';
-import Contact from './components/Contact/Contact';
-import Form from './components/form/form';
 import Footer from './components/Footer/Footer';
-import About from './components/about/About';
 
-const Main = () => {
-  return (
-    <div className='overflow-x-hidden text-white'> 
-      <Navbar />
+// Lazy-loaded components
+const Hero = lazy(() => import('./components/Hero/hero'));
+const Whoweare = lazy(() => import('./components/whoweare/whoweare'));
+const Whatweoffer = lazy(() => import('./components/Whatweoffer/Whatweoffer'));
+const Ourvalue = lazy(() => import('./components/Ourvalue/Ourvalue'));
+const Testimonials = lazy(() => import('./components/testimonial/Testimonial'));
+const Contact = lazy(() => import('./components/contact/Contact'));
+const Form = lazy(() => import('./components/form/form'));
+const About = lazy(() => import('./components/about/About'));
+
+// Scroll to top on route change
+const ScrollToTop = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return null;
+};
+
+const Main = () => (
+  <div className='overflow-x-hidden text-white'>
+    <Navbar />
+    <Suspense fallback={<div>Loading...</div>}>
       <Hero />
       <Whoweare />
       <Whatweoffer />
       <Ourvalue />
       <Testimonials />
       <Contact />
-      <Footer />
-    </div>
-  );
-}
+    </Suspense>
+    <Footer />
+  </div>
+);
 
-const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/Form" element={<Form />} />
-        <Route path="/About" element={<About />} />
-      </Routes>
-    </Router>
-  );
-}
+const NotFound = () => (
+  <div className="text-center mt-20">
+    <h1 className="text-4xl">404 - Page Not Found</h1>
+    <p className="mt-4">Sorry, the page you are looking for does not exist.</p>
+  </div>
+);
+
+const App = () => (
+  <Router>
+    <ScrollToTop />
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="/form" element={<Suspense fallback={<div>Loading...</div>}><Form /></Suspense>} />
+      <Route path="/about" element={<Suspense fallback={<div>Loading...</div>}><About /></Suspense>} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Router>
+);
 
 export default App;

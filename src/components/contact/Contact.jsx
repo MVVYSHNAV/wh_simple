@@ -89,7 +89,7 @@ const Contact = () => {
   ];
 
   return (
-    <div id="Meetus" className="container mx-auto p-4 mt-20 sm:mt-14">
+    <div id="contact" className="container mx-auto p-4 mt-20 sm:mt-14">
       <div className="max-w-5xl mx-auto">
         <motion.h1 
           variants={fadeInLeft}

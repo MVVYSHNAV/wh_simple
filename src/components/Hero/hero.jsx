@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'; // Fixed import
 
 const Hero = () => {
   return (
-    <div className="container mx-auto px-4">
+    <div id='home' className="container mx-auto px-4">
       <div className="flex flex-col items-center">
         {/* Hero Image Section */}
         <motion.div
