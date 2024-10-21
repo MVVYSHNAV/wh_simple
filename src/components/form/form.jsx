@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/footer';
 import { Outlet } from 'react-router-dom';
@@ -167,16 +167,35 @@ const Getform = () => {
                 </motion.button>
               </motion.div>
             </motion.form>
-
-            {showSuccessMessage && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-6 p-4 text-black border border-black rounded-lg text-center max-w-3xl"
-              >
-                Form submitted successfully! We will catch up with you within 24 hours.
-              </motion.div>
-            )}
+            <AnimatePresence>
+              {showSuccessMessage && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-6 p-4 text-black border border-black rounded-lg text-center max-w-3xl flex items-center justify-between"
+                >
+                  <p className="text-lg font-medium">Form submitted successfully! We will catch up with you within 24 hours.</p>
+                  <motion.button
+                    onClick={() => setShowSuccessMessage(false)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="text-black hover:text-red-500 focus:outline-none"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </motion.button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>
