@@ -73,7 +73,7 @@ const Getform = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left"
+            className="text-black text-2xl sm:text-4xl font-Playfair font-bold mb-12 text-left"
           >
             Get in Touch
           </motion.h1>

@@ -84,7 +84,7 @@ const Aboutus = () => {
         {/* Welcome Section */}
         <AnimatedSection>
           <section>
-            <h2 className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left">
+            <h2 className="text-black text-2xl sm:text-4xl font-Playfair font-bold mb-12 text-left">
               Welcome to WizardHorizon!
             </h2>
             <p className="max-w-3xl text-gray-600 text-justify leading-relaxed font-semibold">
@@ -96,7 +96,7 @@ const Aboutus = () => {
         {/* Vision Section */}
         <AnimatedSection>
           <section>
-            <h2 className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left">
+            <h2 className="text-black text-2xl sm:text-4xl font-Playfair font-bold mb-12 text-left">
               Our Vision
             </h2>
             <p className="max-w-3xl text-gray-600 text-justify leading-relaxed font-semibold">
@@ -108,7 +108,7 @@ const Aboutus = () => {
         {/* Approach Section */}
         <AnimatedSection>
           <section>
-            <h2 className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left">
+            <h2 className="text-black text-2xl sm:text-4xl font-Playfair font-bold mb-12 text-left">
               Our Approach
             </h2>
             <motion.div 
@@ -145,7 +145,7 @@ const Aboutus = () => {
         {/* Team Section with Responsive Grid */}
         <AnimatedSection>
           <section>
-            <h2 className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-center">
+            <h2 className="text-black text-2xl sm:text-4xl font-Playfair font-bold mb-12 text-center">
               Our Team
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
