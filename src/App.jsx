@@ -2,7 +2,7 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/footer';
 
 // Lazy-loaded components
 const Hero = lazy(() => import('./components/Hero/hero'));

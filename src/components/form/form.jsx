@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import Footer from '../Footer/footer';
 import { Outlet } from 'react-router-dom';
 
 const Getform = () => {

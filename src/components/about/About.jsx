@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
+import Footer from '../Footer/footer';
 import ImageCard from '../extra/imagecard';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import jibinimg from '../../assets/jibinimg.png';
