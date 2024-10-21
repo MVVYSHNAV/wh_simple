@@ -69,7 +69,7 @@ const GalleryView = () => {
   );
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 mt-20 sm:mt-25">
       {/* Header */}
       <div className="max-w-5xl mx-auto">
         <motion.h1
@@ -77,7 +77,7 @@ const GalleryView = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left mt-10 sm:mt-20" 
+          className="text-black text-2xl sm:text-4xl font-Playfair font-bold mb-12 text-left mt-10 sm:mt-20" 
         >
           Our Value Proposition
         </motion.h1>
@@ -115,7 +115,7 @@ const GalleryView = () => {
       {/* Gallery Grid */}
       <motion.div 
         layout
-        className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-min"
+        className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-min"
       >
         <AnimatePresence>
           {filteredItems.map((item) => (

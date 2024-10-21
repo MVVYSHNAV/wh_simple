@@ -187,13 +187,13 @@ const WhatWeOffer = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 mt-20 sm:mt-14">
+    <div className="container mx-auto p-4 mt-5 sm:mt-5">
       <div className="max-w-6xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }} // Adjusted duration for the title
-          className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left"
+          className="text-black text-2xl sm:text-4xl font-Playfair font-bold mb-12 text-left"
         >
           What We Offer
         </motion.h1>
