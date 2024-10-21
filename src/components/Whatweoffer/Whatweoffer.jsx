@@ -164,15 +164,14 @@ const WhatWeOffer = () => {
     },
   ];
 
- 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.05, // Reduced timing for faster entrance
+      },
+    },
   };
 
   const cardVariants = {
@@ -181,9 +180,10 @@ const WhatWeOffer = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.3, // Reduced duration for faster entrance
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -192,8 +192,7 @@ const WhatWeOffer = () => {
         <motion.h1 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.5 }} // Adjusted duration for the title
           className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left"
         >
           What We Offer
@@ -204,7 +203,7 @@ const WhatWeOffer = () => {
             className="mt-4 sm:mt-10 mb-12 text-center max-w-xl sm:max-w-3xl px-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }} // Adjusted duration for the subtitle
             viewport={{ once: false, margin: "-100px" }}
           >
             <h1 className="font-Montserrat font-extralight text-2xl sm:text-64 md:text-5xl text-black leading-tight">
@@ -218,21 +217,21 @@ const WhatWeOffer = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             {cards.map((card) => (
               <motion.div
                 key={card.id}
                 variants={cardVariants}
-                whileHover={{ scale: 1.03 }}
+                whileHover={{ scale: 1.05 }}
                 className="bg-black rounded-2xl p-8 flex flex-col items-center text-center shadow-md hover:shadow-lg transition-shadow h-80"
               >
                 <motion.div
                   initial={{ scale: 0.8 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="flex justify-center items-center"
+                  transition={{ duration: 0.5 }} // Adjusted for faster entrance
+                  className="flex justify-center items-center mb-4"
                 >
                   <ServiceIllustration type={card.iconType} />
                 </motion.div>
