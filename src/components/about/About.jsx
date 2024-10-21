@@ -73,6 +73,7 @@ const Aboutus = () => {
           initial={{ y: 50 }}
           animate={{ y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           Transforming businesses through <br className="hidden sm:block"/> innovative solutions and <br className="hidden sm:block"/>strategic thinking
         </motion.p>
