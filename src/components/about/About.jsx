@@ -1,191 +1,191 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
-// import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import jib1 from '../../assets/jibinimg.png';
-import vysh1 from '../../assets/vyshnavimg.png';
-import yadu1 from '../../assets/yaduimga.png';
-import { Outlet } from 'react-router-dom';
+import ImageCard from '../extra/imagecard';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import jibinimg from '../../assets/jibinimg.png';
+import vyshnavimg from '../../assets/vyshnavimg.png';
+import yaduimga from '../../assets/yaduimga.png';
+import { motion, useInView } from 'framer-motion';
 
-// Enhanced ImageCard component with animations
-const AnimatedImageCard = ({ imgSrc, children }) => {
+const AnimatedSection = ({ children }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-      className="relative group w-64 bg-gray-900 rounded-lg overflow-hidden shadow-xl"
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <motion.div
-        className="relative h-64 overflow-hidden"
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.3 }}
-      >
-        <img
-          src={imgSrc}
-          alt="Team member"
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-black opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
-      </motion.div>
-      <motion.div
-        className="p-4 relative z-10 bg-gray-900 transform transition-transform duration-300"
-        initial={{ y: 20 }}
-        whileInView={{ y: 0 }}
-      >
-        {children}
-      </motion.div>
+      {children}
     </motion.div>
   );
 };
 
 const Aboutus = () => {
-  // Animation variants for text sections
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6 }
+  const teamMembers = [
+    {
+      name: "Jibin K Job",
+      role: "FOUNDER",
+      education: "Bachelor of Science in Electronics, Mathematics, and Computer Science",
+      linkedin: "https://www.linkedin.com/in/jibinkjob170600",
+      image: jibinimg
+    },
+    {
+      name: "Vyshnav MV",
+      role: "CEO",
+      education: "Masters in Computer Application",
+      linkedin: "https://www.linkedin.com/in/vyshnav-mv-b138b4191",
+      image: vyshnavimg
+    },
+    {
+      name: "Yadu Krishna",
+      role: "CFO",
+      education: "Bachelor of Commerce, CA Intermediate Qualified",
+      linkedin: "https://www.linkedin.com/in/yadu-krishna-v",
+      image: yaduimga
     }
-  };
-
-  // Animation variants for section headers
-  const headerVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.6 }
-    }
-  };
+  ];
 
   return (
-    <div className="bg-gray-800 text-gray-200 min-h-screen sm:bg-gradient-to-b sm:from-gray-900 sm:to-gray-800">
-      <Navbar/>
+    <div className="min-h-screen text-black">
+      <Navbar hideDarkMode />
       
-      <div className="container mx-auto px-5 md:px-52 py-10">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-24"
+      {/* Hero Section with Staggered Text Animation */}
+      <motion.div 
+        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.h1 
+          className="text-3xl sm:text-4xl lg:text-5xl font-Playfair font-bold text-center mb-6"
+          initial={{ y: -50 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
         >
-          <motion.h1 
-            variants={headerVariants}
-            className="text-3xl font-BebasNeue"
-          >
-            About Us
-          </motion.h1>
-        </motion.div>
+          About WizardHorizon
+        </motion.h1>
+        <motion.p 
+          className="font-Montserrat font-extralight text-xl sm:text-3xl lg:text-4xl text-center text-black leading-tight"
+          initial={{ y: 50 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
+          Transforming businesses through <br className="hidden sm:block"/> innovative solutions and <br className="hidden sm:block"/>strategic thinking
+        </motion.p>
+      </motion.div>
 
+      {/* Main Content */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 mb-20">
         {/* Welcome Section */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-10"
-        >
-          <motion.h3 
-            variants={headerVariants}
-            className="text-xl font-BebasNeue"
-          >
-            Welcome to WizardHorizon!
-          </motion.h3>
-          <motion.p 
-            variants={textVariants}
-            className="text-lg mt-4 font-regular font-Roboto text-white text-justify"
-          >
-            At WizardHorizon, we are dedicated to transforming the way businesses operate and thrive in the digital age. As a premier business consulting firm, we leverage our expertise to provide innovative solutions that drive growth and efficiency for our clients.
-          </motion.p>
-        </motion.div>
+        <AnimatedSection>
+          <section>
+            <h2 className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left">
+              Welcome to WizardHorizon!
+            </h2>
+            <p className="max-w-3xl text-gray-600 text-justify leading-relaxed font-semibold">
+              At WizardHorizon, we are dedicated to transforming the way businesses operate and thrive in the digital age. As a premier business consulting firm, we leverage our expertise to provide innovative solutions that drive growth and efficiency for our clients.
+            </p>
+          </section>
+        </AnimatedSection>
 
-        {/* Our Story Section */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-10"
-        >
-          <motion.h3 
-            variants={headerVariants}
-            className="text-xl font-BebasNeue"
-          >
-            Our Story
-          </motion.h3>
-          <motion.p 
-            variants={textVariants}
-            className="text-lg mt-4 font-regular font-Roboto text-white text-justify"
-          >
-            Founded on the principles of innovation, integrity, and impact, WizardHorizon was established to bridge the gap between business strategy and technology. Our founders, seasoned experts in business consulting and IT services, recognized the need for a holistic approach that integrates technology with business strategy to drive meaningful results.
-          </motion.p>
-        </motion.div>
+        {/* Vision Section */}
+        <AnimatedSection>
+          <section>
+            <h2 className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left">
+              Our Vision
+            </h2>
+            <p className="max-w-3xl text-gray-600 text-justify leading-relaxed font-semibold">
+              We envision a world where businesses are not just adapting to change but driving it. A world where technology and strategic thinking converge to create innovative solutions that enhance customer experiences, streamline operations, and fuel growth.
+            </p>
+          </section>
+        </AnimatedSection>
 
-        {/* Team Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mt-20"
-        >
-          <h1 className="text-white text-center text-3xl font-BebasNeue mb-10">
-            " Our Team "
-          </h1>
-          <div className="flex flex-wrap justify-center gap-8 p-4">
-            <AnimatedImageCard imgSrc={jib1}>
-              <h3 className="text-lg md:text-xl font-BebasNeue">Jibin K Job</h3>
-              <h2 className="text-sm md:text-lg font-semibold text-gray-200">FOUNDER</h2>
-              <p className="text-xs md:text-sm mb-2">Bachelor of Science in Electronics, Mathematics, and Computer Science</p>
-              <motion.a 
-                href="https://www.linkedin.com/in/jibinkjob170600" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {/* <OpenInNewIcon className="text-sm" /> LinkedIn */}
-              </motion.a>
-            </AnimatedImageCard>
+        {/* Approach Section */}
+        <AnimatedSection>
+          <section>
+            <h2 className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left">
+              Our Approach
+            </h2>
+            <motion.div 
+              className="bg-gray-900 rounded-lg p-6"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <p className="text-gray-300 mb-4 font-Montserrat font-bold">
+                We believe that success is a journey, not a destination. Our approach centers around:
+              </p>
+              <ul className="space-y-3 text-gray-300">
+                {["Client-Centric Focus: Building long-term relationships based on trust and transparency",
+                  "Agile Methodology: Delivering solutions quickly and adapting to changing needs",
+                  "Data-Driven Decisions: Using insights and evidence to guide our strategies"
+                ].map((item, index) => (
+                  <motion.li 
+                    key={index}
+                    className="flex items-start font-Montserrat"
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <span className="inline-block w-2 h-2 mt-2 mr-3 bg-blue-500 rounded-full"></span>
+                    <span>{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </section>
+        </AnimatedSection>
 
-            <AnimatedImageCard imgSrc={vysh1}>
-              <h3 className="text-lg md:text-xl font-BebasNeue">Vyshnav MV</h3>
-              <h2 className="text-sm md:text-lg font-semibold text-gray-200">CEO</h2>
-              <p className="text-xs md:text-sm mb-2">Masters in Computer Application</p>
-              <motion.a 
-                href="https://www.linkedin.com/in/vyshnav-mv-b138b4191" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {/* <OpenInNewIcon className="text-sm" /> LinkedIn */}
-              </motion.a>
-            </AnimatedImageCard>
-
-            <AnimatedImageCard imgSrc={yadu1}>
-              <h3 className="text-lg md:text-xl font-BebasNeue">Yadu Krishna</h3>
-              <h2 className="text-sm md:text-lg font-semibold text-gray-200">CFO</h2>
-              <p className="text-xs md:text-sm mb-2">Bachelor of Commerce, CA Intermediate Qualified</p>
-              <motion.a 
-                href="https://www.linkedin.com/in/yadu-krishna-v" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {/* <OpenInNewIcon className="text-sm" /> LinkedIn */}
-              </motion.a>
-            </AnimatedImageCard>
-          </div>
-        </motion.div>
+        {/* Team Section with Responsive Grid */}
+        <AnimatedSection>
+          <section>
+            <h2 className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-center">
+              Our Team
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+              {teamMembers.map((member, index) => (
+                <motion.div
+                  key={index}
+                  className="w-full"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <ImageCard className="h-5/6  " imgSrc={member.image}>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-wide">
+                      {member.name}
+                    </h3>
+                    <h2 className="text-sm sm:text-base md:text-lg text-gray-200 font-medium">
+                      {member.role}
+                    </h2>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300">
+                      {member.education}
+                    </p>
+                    <motion.a 
+                      href={member.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs sm:text-sm md:text-base text-blue-300 hover:text-blue-200 mt-2"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <OpenInNewIcon className="w-4 h-4" /> LinkedIn
+                    </motion.a>
+                  </ImageCard>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        </AnimatedSection>
       </div>
-      <Outlet/>
-      <Footer bgColor="bg-gray-800" textC="white" />
+
+      <Footer bgColor="bg-gray-900" textC="white" />
     </div>
   );
 };

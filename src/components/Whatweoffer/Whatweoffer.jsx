@@ -164,6 +164,7 @@ const WhatWeOffer = () => {
     },
   ];
 
+ 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -186,13 +187,13 @@ const WhatWeOffer = () => {
   };
 
   return (
-    <div id='whatwedo' className="container mx-auto p-4 mt-20 sm:mt-14">
+    <div className="container mx-auto p-4 mt-20 sm:mt-14">
       <div className="max-w-6xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true }}
           className="text-black text-lg sm:text-4xl font-Playfair font-bold mb-12 text-left"
         >
           What We Offer
@@ -202,9 +203,9 @@ const WhatWeOffer = () => {
           <motion.div
             className="mt-4 sm:mt-10 mb-12 text-center max-w-xl sm:max-w-3xl px-4"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: false, amount: 0.3 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, margin: "-100px" }}
           >
             <h1 className="font-Montserrat font-extralight text-2xl sm:text-64 md:text-5xl text-black leading-tight">
               Comprehensive Solutions<br />
@@ -217,6 +218,7 @@ const WhatWeOffer = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
           >
             {cards.map((card) => (
               <motion.div
@@ -227,7 +229,8 @@ const WhatWeOffer = () => {
               >
                 <motion.div
                   initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
                   className="flex justify-center items-center"
                 >

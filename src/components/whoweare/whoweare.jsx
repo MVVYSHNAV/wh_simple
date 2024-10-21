@@ -15,7 +15,7 @@ const WhoWeAre = () => {
   };
 
   return (
-    <div id='whoweare' className="container mx-auto px-4 mt-4 sm:mt-14">
+    <div className="container mx-auto px-4 mt-4 sm:mt-14">
       <div className="max-w-5xl mx-auto">
         {/* Title Section */}
         <motion.h1
@@ -38,7 +38,7 @@ const WhoWeAre = () => {
             initial="hidden"
             whileInView="visible"
             transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             <h1 className="font-Montserrat font-extralight text-2xl sm:text-4xl md:text-5xl text-black leading-tight">
               Your Trusted Partner in<br />

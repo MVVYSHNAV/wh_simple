@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Instagram, Linkedin, Twitter, Facebook, Mail } from 'lucide-react';
+import { MapPin, Phone, Instagram, Linkedin, X, Facebook, Mail } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -85,11 +85,11 @@ const Contact = () => {
     { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61564983183570", label: "Facebook" },
     { icon: Instagram, href: "https://www.instagram.com/wizardhorizon", label: "Instagram" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/wizard-horizon-19a698325", label: "Linkedin" },
-    { icon: Twitter, href: "https://x.com/WizardHorizon", label: "Twitter" }
+    { icon: X, href: "https://x.com/WizardHorizon", label: "Twitter" }
   ];
 
   return (
-    <div id="contact" className="container mx-auto p-4 mt-20 sm:mt-14">
+    <div className="container mx-auto p-4 mt-20 sm:mt-14">
       <div className="max-w-5xl mx-auto">
         <motion.h1 
           variants={fadeInLeft}
@@ -226,7 +226,7 @@ const Contact = () => {
                       <MapPin size={24} className="text-blue-400 group-hover:text-white" />
                     </div>
                     <p className="group-hover:text-blue-400 transition-colors duration-300">
-                      Indiranagar, Bangalore, Karnataka, India
+                      Rustum Bagh Layout, NAL Bangalore, Karnataka, India
                     </p>
                   </div>
                   <div className="flex items-center space-x-4 group cursor-pointer">
