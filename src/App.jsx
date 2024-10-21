@@ -8,7 +8,7 @@ import Footer from './components/Footer/footer';
 const Hero = lazy(() => import('./components/Hero/hero'));
 const Whoweare = lazy(() => import('./components/whoweare/whoweare'));
 const Whatweoffer = lazy(() => import('./components/Whatweoffer/Whatweoffer'));
-const Ourvalue = lazy(() => import('./components/Ourvalue/Ourvalue'));
+const Ourvalue = lazy(() => import('./components/ourvalue/Ourvalue'));
 const Testimonials = lazy(() => import('./components/testimonial/Testimonial'));
 const Contact = lazy(() => import('./components/contact/Contact'));
 const Form = lazy(() => import('./components/form/form'));
