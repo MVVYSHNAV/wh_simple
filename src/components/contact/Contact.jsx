@@ -111,7 +111,7 @@ const Contact = () => {
           >
             <h1 className="font-Montserrat font-extralight text-2xl sm:text-64 md:text-5xl text-black dark:text-gray-400 leading-tight">
               Ready to Transform<br />
-              Your Business?
+              Your Business!
             </h1>
           </motion.div>
 
