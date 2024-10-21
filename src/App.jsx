@@ -45,7 +45,7 @@ const ScrollToTop = () => {
 
 // Layout component
 const Layout = ({ children }) => (
-  <div className="min-h-screen flex flex-col bg-white">
+  <div className="min-h-screen flex flex-col bg-white overflow-hidden">
   
     <main className="flex-grow">
       {children}

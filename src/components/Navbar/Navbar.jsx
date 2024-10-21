@@ -62,7 +62,7 @@ const Navbar = () => {
   const MenuButton = ({ isOpen, toggle }) => (
     <button
       onClick={toggle}
-      className="relative w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200 md:hidden mr-5" // Added 'mr-5' to give space on the right
+      className="relative w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200 md:hidden"
       aria-expanded={isOpen}
       aria-label="Toggle navigation menu"
     >
