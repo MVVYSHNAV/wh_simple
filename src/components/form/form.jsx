@@ -105,9 +105,9 @@ const Getform = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { label: 'Please enter your Name', name: 'name', type: 'text', placeholder: 'Jibin K Job' },
+                  { label: 'Please enter your Name', name: 'name', type: 'text', placeholder: 'Name' },
                   { label: 'Email', name: 'email', type: 'email', placeholder: 'example@gmail.com' },
-                  { label: 'Phone', name: 'phone', type: 'number', placeholder: '7305451111' },
+                  { label: 'Phone', name: 'phone', type: 'number', placeholder: '' },
                   { label: 'Domain', name: 'domain', type: 'text', placeholder: 'finance, IT, Graphic' },
                   { label: 'What You Need', name: 'needs', type: 'text', placeholder: 'logo, website, branding' },
                 ].map((input) => (

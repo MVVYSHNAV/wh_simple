@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom'; // Fixed import
 
 const Hero = () => {
   return (
-    <div id='home' className="container mx-auto p-4 mt-20 sm:mt-14 overflow-hidden ">
+    <div id='home' className="container mx-auto p-4 overflow-hidden ">
       <div className="flex flex-col items-center">
         {/* Hero Image Section */}
         <motion.div
-          className="w-full max-w-5xl mt-24"
+          className="w-full max-w-5xl mt-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
