@@ -1,0 +1,3 @@
+{
+    "rewrites": [{ "source": "/(.*),jsx", "destination": "/index.html" }]
+}
