@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import solution1 from '../../assets/solution1.jpg'
-import solution2 from '../../assets/solution2.jpg'
-import growth1 from '../../assets/growth1.jpg'
-import growth2 from '../../assets/growth2.jpg'
-import website1 from '../../assets/website1.jpg'
-import website2 from '../../assets/website2.jpg'
+import festivial1 from '../../assets/festive/WH_diwali_poster.png'
+import festivial2 from '../../assets/festive/diwalipicvj2.png'
+import festivial3 from '../../assets/festive/cso_diwali_poster.png'
+import festivial4 from '../../assets/festive/onam1.jpeg'
+import festivial5 from '../../assets/festive/onam2.jpeg'
+import festivial6 from '../../assets/festive/onam3.jpeg'
+import logo1 from '../../assets/LOGO/logo1.jpeg'
+import logo2 from '../../assets/LOGO/logo2.jpeg'
+import logo3 from '../../assets/LOGO/logo3.jpeg'
+import logo4 from '../../assets/LOGO/logo4.jpeg'
+import logo5 from '../../assets/LOGO/logo5.jpeg'
+import logo6 from '../../assets/LOGO/logo6.jpeg'
+import logo7 from '../../assets/LOGO/logo7.jpeg'
+
+
 
 const GalleryView = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -15,53 +24,102 @@ const GalleryView = () => {
   const galleryItems = [
     {
       id: 1,
-      src:solution1,
-      title: "Innovative Solutions",
-      category: "solutions",
-      span: "col-span-2 row-span-2"
+      src:festivial1,
+      title: "DIWALI",
+      category: "celebration",
+      span: "col-span-2 row-span-1"
     },
     {
       id: 2,
-      src: website1,
-      title: "Travel Website",
-      category: "website",
-      span: "col-span-1 row-span-2"
+      src:festivial2,
+      title: "DIWALI",
+      category: "celebration",
+      span: "col-span-1 row-span-1"
     },
     {
       id: 3,
-      src: growth1,
-      title: "Sustainable Growth",
-      category: "growth",
+      src:festivial3,
+      title: "Diwali poster",
+      category: "celebration",
       span: "col-span-1 row-span-1"
     },
     {
       id: 4,
-      src: solution2,
-      title: "Strategic Planning",
+      src:logo1,
+      title: "Logo samples",
       category: "solutions",
       span: "col-span-1 row-span-1"
     },
     {
       id: 5,
-      src: growth2,
-      title: "Business Development",
-      category: "growth",
-      span: "col-span-2 row-span-1"
+      src:logo2,
+      title: "Logo samples",
+      category: "solutions",
+      span: "col-span-1 row-span-1"
     },
     {
       id: 6,
-      src: website2,
-      title: "Business Blog",
-      category: "website",
-      span: "col-span-1 row-span-2"
+      src:festivial4,
+      title: "Happy Independence day",
+      category: "celebration",
+      span: "col-span-1 row-span-1"
+    },
+    {
+      id: 7,
+      src:festivial5,
+      title: "Onam Poster",
+      category: "celebration",
+      span: "col-span-1 row-span-1"
+    },
+    {
+      id: 8,
+      src:festivial6,
+      title: "Onam Poster",
+      category: "celebration",
+      span: "col-span-2 row-span-2"
+    },
+    {
+      id: 9,
+      src:logo3,
+      title: "",
+      category: "solutions",
+      span: "col-span-1 row-span-1"
+    },
+    {
+      id: 10,
+      src:logo4,
+      title: "",
+      category: "solutions",
+      span: "col-span-1 row-span-1"
+    },
+    {
+      id: 11,
+      src:logo5,
+      title: "",
+      category: "solutions",
+      span: "col-span-2 row-span-1"
+    },
+    {
+      id: 12,
+      src:logo6,
+      title: "",
+      category: "solutions",
+      span: "col-span-2 row-span-1"
+    },
+    {
+      id: 13,
+      src:logo7,
+      title: "",
+      category: "solutions",
+      span: "col-span-1 row-span-1"
     },
   ];
 
   const categories = [
     { id: 'all', label: 'All' },
-    { id: 'solutions', label: 'Solutions' },
-    { id: 'website', label: 'Website' },
-    { id: 'growth', label: 'Growth' }
+    { id: 'solutions', label: 'Mockup' },
+    { id: 'logo', label: 'Logos' },
+    { id: 'celebration', label: 'Celebration' }
   ];
 
   const filteredItems = galleryItems.filter(item => 
