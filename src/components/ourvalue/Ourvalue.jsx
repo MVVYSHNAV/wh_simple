@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import festivial1 from '../../assets/festive/WH_diwali_poster.png'
-import festivial2 from '../../assets/festive/diwalipicvj2.png'
-import festivial3 from '../../assets/festive/cso_diwali_poster.png'
-import festivial4 from '../../assets/festive/onam1.jpeg'
-import festivial5 from '../../assets/festive/onam2.jpeg'
-import festivial6 from '../../assets/festive/onam3.jpeg'
 import logo1 from '../../assets/LOGO/logo1.jpeg'
 import logo2 from '../../assets/LOGO/logo2.jpeg'
 import logo3 from '../../assets/LOGO/logo3.jpeg'
@@ -22,27 +16,7 @@ const GalleryView = () => {
   
 
   const galleryItems = [
-    {
-      id: 1,
-      src:festivial1,
-      title: "DIWALI",
-      category: "celebration",
-      span: "md:col-span-2 md:row-span-1"
-    },
-    {
-      id: 2,
-      src:festivial2,
-      title: "DIWALI",
-      category: "celebration",
-      span: "md:col-span-1 md:row-span-1"
-    },
-    {
-      id: 3,
-      src:festivial3,
-      title: "Diwali poster",
-      category: "celebration",
-      span: "md:col-span-1 md:row-span-1"
-    },
+   
     {
       id: 4,
       src:logo1,
@@ -56,27 +30,6 @@ const GalleryView = () => {
       title: "Logo samples",
       category: "solutions",
       span: "md:col-span-1 md:row-span-1"
-    },
-    {
-      id: 6,
-      src:festivial4,
-      title: "Happy Independence day",
-      category: "celebration",
-      span: "md:col-span-1 md:row-span-1"
-    },
-    {
-      id: 7,
-      src:festivial5,
-      title: "Onam Poster",
-      category: "celebration",
-      span: "md:col-span-1 md:row-span-1"
-    },
-    {
-      id: 8,
-      src:festivial6,
-      title: "Onam Poster",
-      category: "celebration",
-      span: "md:col-span-2 md:row-span-1"
     },
     {
       id: 9,
