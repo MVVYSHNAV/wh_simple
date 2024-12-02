@@ -82,9 +82,6 @@ const Home = () => {
         <section id="whoweare">
           <Whoweare />
         </section>
-        <section id="ourvalue">
-          <Ourvalue />
-        </section>
         <section id="testimonials">
           <Testimonials />
         </section>
