@@ -4,7 +4,6 @@ import Footer from '../Footer/footer';
 import ImageCard from '../extra/imagecard';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import jibinimg from '../../assets/jibinimg.png';
-import vyshnavimg from '../../assets/vyshnavimg.png';
 import yaduimga from '../../assets/yaduimga.png';
 import { motion, useInView } from 'framer-motion';
 
@@ -34,11 +33,10 @@ const Aboutus = () => {
       image: jibinimg
     },
     {
-      name: "Vyshnav MV",
+      name: "VPRO",
       role: "CEO",
-      education: "Masters in Computer Application",
-      linkedin: "https://www.linkedin.com/in/vyshnav-mv-b138b4191",
-      image: vyshnavimg
+      education: "Computer Science",
+      linkedin: "https://www.linkedin.com/in/",
     },
     {
       name: "Yadu Krishna",
