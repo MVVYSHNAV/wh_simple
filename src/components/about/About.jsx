@@ -33,12 +33,6 @@ const Aboutus = () => {
       image: jibinimg
     },
     {
-      name: "VPRO",
-      role: "CEO",
-      education: "Computer Science",
-      linkedin: "https://www.linkedin.com/in/",
-    },
-    {
       name: "Yadu Krishna",
       role: "CFO",
       education: "Bachelor of Commerce, CA Intermediate Qualified",
